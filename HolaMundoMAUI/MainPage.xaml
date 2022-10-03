@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HolaMundoMAUI.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Image
+                Source="dotnet_bot.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+
+            <Label
+                x:Name="txtError"
+                Text="Debes introducir un Nombre"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="16"
+                TextColor="Red"
+                IsVisible="false"
+                HorizontalOptions="Center" />
+
+            <Label
+                x:Name="lblNombre"
+                Text="Nombre: "
+                SemanticProperties.Description="Escriba su nombre aquí"
+                FontSize="13"
+                HorizontalOptions="Start" />
+            
+            <Entry x:Name = "txtNombre"
+                   HorizontalOptions="Center"
+                   MinimumWidthRequest="60"
+                  />
+            <Label
+                x:Name="lblApellidos"
+                Text="Apellidos: "
+                SemanticProperties.Description="Escriba sus apellidos aquí"
+                FontSize="13"
+                HorizontalOptions="Center" />
+            <!--MinimumWidthRequest es para que aparezca en Movil-->
+            <Entry x:Name = "txtApellidos"
+                   HorizontalOptions="Center"
+                  MinimumWidthRequest="60"
+                   />
+
+            <Button
+                x:Name="btnSaludar"
+                Text="Saludar"
+                SemanticProperties.Hint="Llama a DisplayMessage"
+                Clicked="OnBotonClicado"
+                HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
