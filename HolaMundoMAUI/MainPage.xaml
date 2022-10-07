@@ -13,24 +13,33 @@
                 Source="dotnet_bot.png"
                 SemanticProperties.Description="Cute dot net bot waving hi to you!"
                 HeightRequest="200"
+                IsVisible="{Binding IsToggled, Mode=OneWay}"
+                BindingContext="{x:Reference switch}"
                 HorizontalOptions="Center" />
 
             <Label
                 x:Name="txtError"
                 Text="Debes introducir un Nombre"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="16"
+                SemanticProperties.HeadingLevel="Level2"
+                FontSize="{Binding Value, Mode=OneWay}"
                 TextColor="Red"
-                IsVisible="false"
+                IsVisible="true"
+                BindingContext="{x:Reference stepper}"
                 HorizontalOptions="Center" />
+            <Stepper
+                x:Name="stepper"
+                Maximum="100"
+                Minimum="0"
+                Value="50"
+                />
 
             <Label
                 x:Name="lblNombre"
                 Text="Nombre: "
                 SemanticProperties.Description="Escriba su nombre aquí"
                 FontSize="13"
-                HorizontalOptions="Start" />
-            
+                HorizontalOptions="Center" />
+
             <Entry x:Name = "txtNombre"
                    HorizontalOptions="Center"
                    MinimumWidthRequest="60"
@@ -46,6 +55,8 @@
                    HorizontalOptions="Center"
                   MinimumWidthRequest="60"
                    />
+            <Switch
+                x:Name="switch"/>
 
             <Button
                 x:Name="btnSaludar"
@@ -54,6 +65,17 @@
                 Clicked="OnBotonClicado"
                 HorizontalOptions="Center" />
 
+            <ProgressBar 
+                x:Name="barraProgreso"
+                Progress="{Binding Path=Value}"
+                BindingContext="{x:Reference slider}"
+             ProgressColor="Orange" />
+
+            <Slider
+                x:Name="slider"
+                Minimum="0"
+                Maximum="1"
+                />
         </VerticalStackLayout>
     </ScrollView>
 

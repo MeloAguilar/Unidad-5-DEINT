@@ -5,10 +5,13 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:HolaMundoMAUI"
     Shell.FlyoutBehavior="Disabled">
+    <TabBar>
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+
+        <ShellContent
+            Title="About"
+            ContentTemplate="{DataTemplate local:About}"
+            Icon="icon_about" />
+    </TabBar>
 
 </Shell>

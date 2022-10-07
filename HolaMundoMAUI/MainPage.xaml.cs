@@ -23,5 +23,10 @@ public partial class MainPage : ContentPage
 			DisplayAlert("Saludo", $" Hola {persona.Nombre} {persona.Apellidos}", "Aceptar");
 		}
 	}
+
+	private async void irAPaginaSliders(object sender, EventArgs e)
+	{
+		await Launcher.Default.OpenAsync("");
+	}
 }
 

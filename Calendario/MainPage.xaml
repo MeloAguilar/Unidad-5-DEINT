@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Calendario.MainPage">
+
+    <ScrollView>
+        <HorizontalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+       
+
+
+
+
+            <Label
+                Text="Fecha de entrada"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <DatePicker
+                Format="DD/MM/YYYY"
+                x:Name="dpFechaEntrada"
+                DateSelected="EntradaIntroducida"
+               
+                />
+
+            <Label
+                Text="Fecha de Salida"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <DatePicker
+                Format="DD/MM/YYYY"
+                x:Name="dpFechaSalida"
+                DateSelected="EntradaIntroducida"
+                BindingContext="{x:Reference dpFechaEntrada}"
+                MinimumDate="{Binding Date, Mode=TwoWay}"
+                />
+
+
+            <Label
+                x:Name="lblError"
+                Text="Elige fechas logicas"
+                IsVisible="false"
+                SemanticProperties.Hint="Counts the number of times you click"
+                HorizontalOptions="Center" />
+            
+
+        </HorizontalStackLayout>
+    </ScrollView>
+
+</ContentPage>
